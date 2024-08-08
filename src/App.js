@@ -1,28 +1,27 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-var slideIndex = 0;
-
-carousel();
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1;}
-  x[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 2000); // Change image every 2 seconds
-}
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from 'react-bootstrap/Carousel';
 function App() {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
   return (
     <div className="App">
       <header className="App-header">
       </header>
       <body> 
         <h1>CITISCAPES EVENTS</h1>
-        <img class="mySlides" src="https://e1.pxfuel.com/desktop-wallpaper/844/928/desktop-wallpaper-ferrari-world-abu-dhabi.jpg"></img>
-        <img class="mySlides" src="https://www.citiscapegroup.com/wp-content/uploads/2021/05/shutterstock_191551838-1.jpeg"></img>
+        <Carousel activeIndex={index} onSelect={handleSelect} className='mySlidesborder'>          
+          <Carousel.Item interval={2000}>
+            <img class="mySlides" src="https://e1.pxfuel.com/desktop-wallpaper/844/928/desktop-wallpaper-ferrari-world-abu-dhabi.jpg"></img>
+          </Carousel.Item>
+          <Carousel.Item interval={2000}>
+            <img class="mySlides" src="https://www.citiscapegroup.com/wp-content/uploads/2021/05/shutterstock_191551838-1.jpeg"></img>
+          </Carousel.Item>
+        </Carousel>
       </body>
     </div>
   );
