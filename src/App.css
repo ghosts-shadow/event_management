@@ -27,15 +27,37 @@
 .mySlides{
   width: 100%;
   height: 550px;
-}
+  
+  }
 .mySlidesborder{
-  width: 50%;
+  width: 100%
 }
 .App-link {
   color: #61dafb;
 }
 
+.mycontainer {
+  width:100%;
+  overflow:auto;
+}
+.mycontainer div {
+  width:100%;
+  float:left;
+}
 
+.hi {
+  width: 150%;
+  height: 200px;
+}
+.image {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.text {
+  font-size: 18px;
+}
 
 
 @keyframes App-logo-spin {
